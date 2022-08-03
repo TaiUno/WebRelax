@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WebRelax/static/css/main.da13bdf3.css",
+    "main.js": "/WebRelax/static/js/main.20a836ae.js",
+    "index.html": "/WebRelax/index.html",
+    "main.da13bdf3.css.map": "/WebRelax/static/css/main.da13bdf3.css.map",
+    "main.20a836ae.js.map": "/WebRelax/static/js/main.20a836ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da13bdf3.css",
+    "static/js/main.20a836ae.js"
+  ]
+}
