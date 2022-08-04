@@ -64,6 +64,20 @@ function App() {
           </button>
         </div>
       </div>
+      <div className="fixed flex items-center justify-center w-full bottom-1 left-1 text-white font-bold text-2xl">
+        <p>
+          2022 - Made by Tai - Click here:
+          <a
+            href="https://www.facebook.com/Dragon.Pham.no1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Facebook
+          </a>
+          .
+        </p>
+      </div>
     </div>
   );
 }
