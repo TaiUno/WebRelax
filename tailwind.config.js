@@ -27,6 +27,8 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin 4s linear infinite",
+        "spin-slow-no-repeat": "spin 4s linear",
+        "calcir-slow": "calcir 5s cubic-bezier(1, 1, 1, 1)",
       },
       keyframes: {
         spin: {
@@ -35,6 +37,17 @@ module.exports = {
           },
           to: {
             transform: "translateY(-650px)",
+          },
+        },
+        calcir: {
+          "100%": {
+            transform: "scale(0.0)",
+            "-webkit-transform": "scale(0.0)",
+          },
+          "20%": {
+            transform: "scale(1.0)",
+            "-webkit-transform": "scale(1.0)",
+            // transform: "translateY(-650px)",
           },
         },
       },
