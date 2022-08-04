@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/WebRelax/static/css/main.183cade3.css",
-    "main.js": "/WebRelax/static/js/main.a47636ab.js",
+    "main.css": "/WebRelax/static/css/main.f1e673ab.css",
+    "main.js": "/WebRelax/static/js/main.81f9b684.js",
     "static/media/em_02.jpg": "/WebRelax/static/media/em_02.142f1b409fd5013074c9.jpg",
     "index.html": "/WebRelax/index.html",
-    "main.183cade3.css.map": "/WebRelax/static/css/main.183cade3.css.map",
-    "main.a47636ab.js.map": "/WebRelax/static/js/main.a47636ab.js.map"
+    "main.f1e673ab.css.map": "/WebRelax/static/css/main.f1e673ab.css.map",
+    "main.81f9b684.js.map": "/WebRelax/static/js/main.81f9b684.js.map"
   },
   "entrypoints": [
-    "static/css/main.183cade3.css",
-    "static/js/main.a47636ab.js"
+    "static/css/main.f1e673ab.css",
+    "static/js/main.81f9b684.js"
   ]
 }
