@@ -10,15 +10,20 @@ function App() {
   const [audio] = useState(new Audio(song));
 
   const handleAction = () => {
+    domH1.current.classList.remove("animate-textblur-slow3");
     setContent("How are you today?");
     domH1.current.classList.add("animate-textblur-slow");
+
     setTimeout(() => {
+      domH1.current.classList.remove("animate-textblur-slow");
       setContent("If you're tire, relax....");
       domH1.current.classList.add("animate-textblur-slow1");
       setTimeout(() => {
+        domH1.current.classList.remove("animate-textblur-slow1");
         setContent("Everything is okay");
         domH1.current.classList.add("animate-textblur-slow2");
         setTimeout(() => {
+          domH1.current.classList.remove("animate-textblur-slow2");
           setContent("Listening to music <3");
           domH1.current.classList.add("animate-textblur-slow3");
           audio.play();
