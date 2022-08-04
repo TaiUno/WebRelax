@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/WebRelax/static/css/main.acc45d02.css",
-    "main.js": "/WebRelax/static/js/main.128349e4.js",
+    "main.js": "/WebRelax/static/js/main.e4a05cad.js",
     "static/media/LoveSomeone_LukasGraham.mp3": "/WebRelax/static/media/LoveSomeone_LukasGraham.98c232ccecb8f3342928.mp3",
     "static/media/em_02.jpg": "/WebRelax/static/media/em_02.142f1b409fd5013074c9.jpg",
     "index.html": "/WebRelax/index.html",
     "main.acc45d02.css.map": "/WebRelax/static/css/main.acc45d02.css.map",
-    "main.128349e4.js.map": "/WebRelax/static/js/main.128349e4.js.map"
+    "main.e4a05cad.js.map": "/WebRelax/static/js/main.e4a05cad.js.map"
   },
   "entrypoints": [
     "static/css/main.acc45d02.css",
-    "static/js/main.128349e4.js"
+    "static/js/main.e4a05cad.js"
   ]
 }
