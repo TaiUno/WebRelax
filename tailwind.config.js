@@ -27,7 +27,11 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin 4s linear infinite",
-        "spin-slow-no-repeat": "spin 4s linear",
+        "ping-slow": "ping 4s cubic-bezier(1, 1, 0.2, 1)",
+        "textblur-slow": "calcir 5s linear",
+        "textblur-slow1": "spin 15s linear",
+        "textblur-slow2": "ping 5s linear",
+        "textblur-slow3": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "calcir-slow": "calcir 5s cubic-bezier(1, 1, 1, 1)",
       },
       keyframes: {
