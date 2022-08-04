@@ -4,11 +4,11 @@ import song from "./audio/LoveSomeone_LukasGraham.mp3";
 
 function App() {
   let domH1 = useRef();
-
   let titleContent = "Hello bấy bì, press button below to next";
   let [content, setContent] = useState(titleContent);
   let isAction = false;
   const [audio] = useState(new Audio(song));
+
   const handleAction = () => {
     setContent("How are you today?");
     domH1.current.classList.add("animate-textblur-slow");
@@ -19,7 +19,7 @@ function App() {
         setContent("Everything is okay");
         domH1.current.classList.add("animate-textblur-slow2");
         setTimeout(() => {
-          setContent("listening to music <3");
+          setContent("Listening to music <3");
           domH1.current.classList.add("animate-textblur-slow3");
           audio.play();
         }, 4000);

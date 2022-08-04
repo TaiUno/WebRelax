@@ -59,4 +59,3 @@ module.exports = {
   },
   plugins: [],
 };
-// 'Square Peg', cursive
