@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useRef } from "react";
+import song from "./audio/LoveSomeone_LukasGraham.mp3";
 
 function App() {
   let domH1 = useRef();
@@ -7,11 +8,7 @@ function App() {
   let titleContent = "Hello bấy bì, press button below to next";
   let [content, setContent] = useState(titleContent);
   let isAction = false;
-  const [audio] = useState(
-    new Audio(
-      "https://data36.chiasenhac.com/downloads/1968/4/1967418-ed9aa6ee/128/Love%20Someone%20-%20Lukas%20Graham.mp3"
-    )
-  );
+  const [audio] = useState(new Audio(song));
   const handleAction = () => {
     setContent("How are you today?");
     domH1.current.classList.add("animate-textblur-slow");
