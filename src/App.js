@@ -15,7 +15,7 @@ function App() {
   const handleAction = () => {
     setContent("How are you today?");
     setTimeout(() => {
-      setContent("If you tire, relax....");
+      setContent("If you're tire, relax....");
       setTimeout(() => {
         setContent("Everything is okay");
         setTimeout(() => {
