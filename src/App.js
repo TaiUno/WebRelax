@@ -19,7 +19,7 @@ function App() {
       setTimeout(() => {
         setContent("Everything is okay");
         setTimeout(() => {
-          setContent("Listing to music <3");
+          setContent("listening to music <3");
           audio.play();
         }, 4000);
       }, 4000);
