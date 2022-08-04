@@ -1,13 +1,13 @@
 import "./App.css";
 import { useState, useRef } from "react";
-import song from "./audio/LoveSomeone_LukasGraham.mp3";
+import song1 from "./audio/LoveSomeone_LukasGraham.mp3";
 
 function App() {
   let domH1 = useRef();
   let titleContent = "Hello bấy bì, press button below to next";
   let [content, setContent] = useState(titleContent);
   let isAction = false;
-  const [audio] = useState(new Audio(song));
+  const [audio] = useState(new Audio(song1));
 
   const handleAction = () => {
     domH1.current.classList.remove("animate-textblur-slow3");
