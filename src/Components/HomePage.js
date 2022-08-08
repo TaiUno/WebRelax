@@ -1,18 +1,67 @@
 import { useState, useRef } from "react";
-import song1 from "../audio/LoveSomeone_LukasGraham.mp3";
+import songDone from "../audio/LoveSomeone_LukasGraham.mp3";
+import song2 from "../audio/Older_SashaSloan.mp3";
+import song1 from "../audio/ToTheMoon-hooligan-6484403.mp3";
+import SongControl from "./songControl/SongControl";
 
 const HomePage = () => {
+  let songs = [song1, song2];
   let domH1 = useRef();
-  let titleContent = "Hello bấy bì, press button below to next";
-  let [content, setContent] = useState(titleContent);
-  let isAction = false;
-  const [audio] = useState(new Audio(song1));
+  let domImg = useRef();
+  const titleContent = "Hello bấy bì, press button below to next";
+  const classImg = "bg-uyen-em0";
+  const notFound = "notFound";
+  const [content, setContent] = useState(titleContent);
+  const [img, setImg] = useState(classImg);
+  let [timeLeft, setTimeLeft] = useState(0);
+  let [isPlay, setIsPlay] = useState(false);
+  let [audio, setAudio] = useState(new Audio(songs[0]));
+  let [isDone, setIsDone] = useState(true);
 
+  const reset = () => {
+    audio.src && audio.pause();
+    setContent(titleContent);
+    setImg(classImg);
+    setTimeLeft(0);
+    setIsPlay(false);
+    setAudio(new Audio());
+    setIsDone(true);
+  };
+
+  const playMusic = () => {
+    if (!isPlaying(audio)) {
+      if (audio.src && !audio.src.includes(notFound)) {
+        audio.play();
+        setIsPlay(true);
+      }
+    } else {
+      audio.src && audio.pause();
+      audio.src && setIsPlay(false);
+    }
+  };
+  const isPlaying = (audElem) => {
+    return !audElem.paused;
+  };
+
+  //#region HandleButton
   const handleAction = () => {
-    domH1.current.classList.remove("animate-textblur-slow3");
-    setContent("How are you today?");
-    domH1.current.classList.add("animate-textblur-slow");
-
+    if (isDone) {
+      if (!audio.src.includes(songDone)) {
+        audio.src = songDone;
+        setAudio(audio);
+        setIsPlay(false);
+        setIsDone(false);
+      }
+      domH1.current.classList.remove("animate-textblur-slow3");
+      setContent("How are you today?");
+      domH1.current.classList.add("animate-textblur-slow");
+      audio.src && audio.pause();
+      actionDone();
+    } else {
+      reset();
+    }
+  };
+  const actionDone = () => {
     setTimeout(() => {
       domH1.current.classList.remove("animate-textblur-slow");
       setContent("If you're tire, relax....");
@@ -25,14 +74,47 @@ const HomePage = () => {
           domH1.current.classList.remove("animate-textblur-slow2");
           setContent("Listening to music <3");
           domH1.current.classList.add("animate-textblur-slow3");
-          audio.play();
+          if (!isPlaying(audio)) {
+            audio.play();
+            setIsPlay(true);
+          } else {
+            alert("Playing... Please wait to end.");
+          }
         }, 4000);
       }, 4000);
     }, 5000);
   };
+  //#endregion
+
+  const actionLeft = () => {
+    if (!isDone) return;
+    if (timeLeft <= 0) {
+      setTimeLeft(3);
+      timeLeft = 3;
+    } else {
+      setTimeLeft(--timeLeft);
+    }
+    setImg(`bg-uyen-em${timeLeft}`);
+    audio.src = songs[timeLeft] || notFound;
+    setAudio(audio);
+    setIsPlay(false);
+  };
+  const actionRight = () => {
+    if (!isDone) return;
+    if (timeLeft < 3) {
+      setTimeLeft(++timeLeft);
+    } else {
+      setTimeLeft(0);
+      timeLeft = 0;
+    }
+    setImg(`bg-uyen-em${timeLeft}`);
+    audio.src = songs[timeLeft] || notFound;
+    setAudio(audio);
+    setIsPlay(false);
+  };
 
   return (
-    <div className="h-screen bg-[#0d1017] relative overflow-hidden">
+    <div className="h-screen bg-gradient-to-br from-zinc-900 to-slate-900 relative overflow-hidden">
       <div
         className="absolute bg-650 after:content-[' '] inset-0 -bottom-[650px] bg-gradient-radial
       animate-spin-slow"
@@ -43,25 +125,28 @@ const HomePage = () => {
         </div>
         <div className="flex items-center justify-center mt-6">
           <div
+            ref={domImg}
+            key={img}
             className={
-              (isAction ? "animate-calcir-slow " : "") +
-              "flex items-center justify-center w-72 h-72 bg-uyen-em bg-cover rounded-full shadow-3xl"
+              img +
+              " flex items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl animate-textblur-down-up-slow cursor-pointer"
             }
           ></div>
         </div>
-        <div className="flex items-center justify-center mt-6 w-full">
-          <input
-            className=" rounded-2xl w-1/3 max-w-lg p-4 focus:outline-none font-serif"
-            disabled
-            placeholder="Developping..."
-          ></input>
-        </div>
+        <SongControl
+          onIsPlaying={isPlay}
+          onActionLeft={actionLeft}
+          onActionRight={actionRight}
+          onPlayMusic={playMusic}
+        />
         <div className="flex items-center justify-center mt-6 w-full">
           <button
-            onClick={handleAction}
+            onClick={() => {
+              handleAction();
+            }}
             className=" rounded-2xl h-11 w-28 border-none bg-[#a7582c] font-semibold text-white hover:text-[#a7582c] hover:bg-white"
           >
-            DONE
+            {isDone ? "DONE" : "CLOSE"}
           </button>
         </div>
       </div>
