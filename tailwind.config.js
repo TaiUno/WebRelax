@@ -17,6 +17,7 @@ module.exports = {
         "uyen-em1": "url('../src/img/em_03.jpg')",
         "uyen-em2": "url('../src/img/DSC03248.JPG')",
         "uyen-em3": "url('../src/img/em_04.jpg')",
+        "uyen-em4": "url('../src/img/em_01.jpg')",
       },
       backgroundSize: {
         auto: "auto",

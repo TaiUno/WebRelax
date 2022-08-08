@@ -89,8 +89,8 @@ const HomePage = () => {
   const actionLeft = () => {
     if (!isDone) return;
     if (timeLeft <= 0) {
-      setTimeLeft(3);
-      timeLeft = 3;
+      setTimeLeft(4);
+      timeLeft = 4;
     } else {
       setTimeLeft(--timeLeft);
     }
@@ -101,7 +101,7 @@ const HomePage = () => {
   };
   const actionRight = () => {
     if (!isDone) return;
-    if (timeLeft < 3) {
+    if (timeLeft < 4) {
       setTimeLeft(++timeLeft);
     } else {
       setTimeLeft(0);
@@ -127,10 +127,7 @@ const HomePage = () => {
           <div
             ref={domImg}
             key={img}
-            className={
-              img +
-              " flex items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl animate-textblur-down-up-slow cursor-pointer"
-            }
+            className={`flex items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl ${img} animate-textblur-down-up-slow`}
           ></div>
         </div>
         <SongControl
