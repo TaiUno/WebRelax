@@ -94,7 +94,7 @@ const HomePage = () => {
     } else {
       setTimeLeft(--timeLeft);
     }
-    setImg(`bg-uyen-em${timeLeft}`);
+    setImg(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
     audio.src = songs[timeLeft] || notFound;
     setAudio(audio);
     setIsPlay(false);
@@ -107,7 +107,7 @@ const HomePage = () => {
       setTimeLeft(0);
       timeLeft = 0;
     }
-    setImg(`bg-uyen-em${timeLeft}`);
+    setImg(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
     audio.src = songs[timeLeft] || notFound;
     setAudio(audio);
     setIsPlay(false);
@@ -127,7 +127,7 @@ const HomePage = () => {
           <div
             ref={domImg}
             key={img}
-            className={`flex items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl ${img} animate-textblur-down-up-slow`}
+            className={`flex ${img} items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl`}
           ></div>
         </div>
         <SongControl
