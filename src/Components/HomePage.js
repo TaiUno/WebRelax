@@ -1,19 +1,19 @@
-import { useState, useRef } from "react";
-import songDone from "../audio/LoveSomeone_LukasGraham.mp3";
-import song2 from "../audio/Older_SashaSloan.mp3";
-import song1 from "../audio/ToTheMoon-hooligan-6484403.mp3";
-import SongControl from "./songControl/SongControl";
-import Clock from "./clock/Clock";
+import { useState, useRef } from 'react';
+import songDone from '../audio/LoveSomeone_LukasGraham.mp3';
+import song2 from '../audio/Older_SashaSloan.mp3';
+import song1 from '../audio/ToTheMoon-hooligan-6484403.mp3';
+import SongControl from './songControl/SongControl';
+import Clock from './clock/Clock';
 
 const HomePage = () => {
   let songs = [song1, song2];
   let domH1 = useRef();
   let domImg = useRef();
-  const titleContent = "Hello bấy bì, press button below to next";
-  const classImg = "bg-uyen-em0";
-  const notFound = "notFound";
+  const titleContent = 'Hello bấy bì, press button below to next';
+  const classImg = 'bg-uyen-em0';
+  const notFound = 'notFound';
   const [content, setContent] = useState(titleContent);
-  const [img, setImg] = useState(classImg);
+  const [image, setImage] = useState(classImg);
   let [timeLeft, setTimeLeft] = useState(0);
   let [isPlay, setIsPlay] = useState(false);
   let [audio, setAudio] = useState(new Audio(songs[0]));
@@ -22,7 +22,7 @@ const HomePage = () => {
   const reset = () => {
     audio.src && audio.pause();
     setContent(titleContent);
-    setImg(classImg);
+    setImage(classImg);
     setTimeLeft(0);
     setIsPlay(false);
     setAudio(new Audio());
@@ -53,9 +53,9 @@ const HomePage = () => {
         setIsPlay(false);
         setIsDone(false);
       }
-      domH1.current.classList.remove("animate-textblur-slow3");
-      setContent("How are you today?");
-      domH1.current.classList.add("animate-textblur-slow");
+      domH1.current.classList.remove('animate-textblur-slow3');
+      setContent('How are you today?');
+      domH1.current.classList.add('animate-textblur-slow');
       audio.src && audio.pause();
       actionDone();
     } else {
@@ -64,22 +64,22 @@ const HomePage = () => {
   };
   const actionDone = () => {
     setTimeout(() => {
-      domH1.current.classList.remove("animate-textblur-slow");
+      domH1.current.classList.remove('animate-textblur-slow');
       setContent("If you're tire, relax....");
-      domH1.current.classList.add("animate-textblur-slow1");
+      domH1.current.classList.add('animate-textblur-slow1');
       setTimeout(() => {
-        domH1.current.classList.remove("animate-textblur-slow1");
-        setContent("Everything is okay");
-        domH1.current.classList.add("animate-textblur-slow2");
+        domH1.current.classList.remove('animate-textblur-slow1');
+        setContent('Everything is okay');
+        domH1.current.classList.add('animate-textblur-slow2');
         setTimeout(() => {
-          domH1.current.classList.remove("animate-textblur-slow2");
-          setContent("Listening to music <3");
-          domH1.current.classList.add("animate-textblur-slow3");
+          domH1.current.classList.remove('animate-textblur-slow2');
+          setContent('Listening to music <3');
+          domH1.current.classList.add('animate-textblur-slow3');
           if (!isPlaying(audio)) {
             audio.play();
             setIsPlay(true);
           } else {
-            alert("Playing... Please wait to end.");
+            alert('Playing... Please wait to end.');
           }
         }, 4000);
       }, 4000);
@@ -95,7 +95,7 @@ const HomePage = () => {
     } else {
       setTimeLeft(--timeLeft);
     }
-    setImg(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
+    setImage(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
     audio.src = songs[timeLeft] || notFound;
     setAudio(audio);
     setIsPlay(false);
@@ -108,7 +108,7 @@ const HomePage = () => {
       setTimeLeft(0);
       timeLeft = 0;
     }
-    setImg(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
+    setImage(`bg-uyen-em${timeLeft} animate-textblur-down-up-slow`);
     audio.src = songs[timeLeft] || notFound;
     setAudio(audio);
     setIsPlay(false);
@@ -128,8 +128,8 @@ const HomePage = () => {
         <div className="flex items-center justify-center mt-6">
           <div
             ref={domImg}
-            key={img}
-            className={`flex ${img} items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl`}
+            key={image}
+            className={`flex ${image} items-center justify-center w-72 h-72 bg-cover rounded-full shadow-3xl`}
           ></div>
         </div>
         <SongControl
@@ -145,7 +145,7 @@ const HomePage = () => {
             }}
             className=" rounded-2xl h-11 w-28 border-none bg-[#a7582c] font-semibold text-white hover:text-[#a7582c] hover:bg-white"
           >
-            {isDone ? "DONE" : "CLOSE"}
+            {isDone ? 'DONE' : 'CLOSE'}
           </button>
         </div>
       </div>
