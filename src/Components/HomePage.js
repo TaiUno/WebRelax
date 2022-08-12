@@ -3,6 +3,7 @@ import songDone from "../audio/LoveSomeone_LukasGraham.mp3";
 import song2 from "../audio/Older_SashaSloan.mp3";
 import song1 from "../audio/ToTheMoon-hooligan-6484403.mp3";
 import SongControl from "./songControl/SongControl";
+import Clock from "./clock/Clock";
 
 const HomePage = () => {
   let songs = [song1, song2];
@@ -119,6 +120,7 @@ const HomePage = () => {
         className="absolute bg-650 after:content-[' '] inset-0 -bottom-[650px] bg-gradient-radial
       animate-spin-slow"
       ></div>
+      <Clock />
       <div className="w-full absolute flex-grow justify-center">
         <div className="mt-28 text-center text-white text-5xl font-sans">
           <h1 ref={domH1}>{content}</h1>

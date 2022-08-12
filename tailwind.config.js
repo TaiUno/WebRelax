@@ -9,8 +9,11 @@ module.exports = {
       boxShadow: {
         "3xl":
           "0 0 50px tomato, 0 0 30px orange, inset 0 10px 10px 20px #ddd, inset 30px 0 35px 50px #ccc",
+        "clock-xl":
+          "0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.05), inset 0 15px 15px rgba(0, 0, 0, 0.05)",
       },
       backgroundImage: {
+        clock: "url('../src/img/clock.png')",
         "gradient-radial":
           "radial-gradient(4px 4px at 100px 50px, #fff, transparent), radial-gradient(6px 6px at 200px 150px, #fff, transparent), radial-gradient(3px 3px at 300px 250px, #fff, transparent), radial-gradient(4px 4px at 400px 350px, #fff, transparent),radial-gradient(6px 6px at 500px 100px, #fff, transparent),radial-gradient(3px 3px at 50px 200px, #fff, transparent),radial-gradient(4px 4px at 150px 300px, #fff, transparent),radial-gradient(6px 6px at 250px 400px, #fff, transparent),radial-gradient(4px 4px at 350px 500px, #fff, transparent),radial-gradient(3px 3px at 550px 550px, #fff, transparent),radial-gradient(0.5px 0.5px at 10px 50px, #fff, transparent),radial-gradient(0.5px 0.5px at 600px 100px, #fff, transparent),radial-gradient(1.5px 1.5px at 100px 500px, #fff, transparent)",
         "uyen-em0": "url('../src/img/em_02.jpg')",
