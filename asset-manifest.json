@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/WebRelax/static/css/main.b26b45b1.css",
+    "main.css": "/WebRelax/static/css/main.6b4515f4.css",
     "main.js": "/WebRelax/static/js/main.9bd94c62.js",
     "static/media/ToTheMoon-hooligan-6484403.mp3": "/WebRelax/static/media/ToTheMoon-hooligan-6484403.091aefb14fc4c9633f74.mp3",
     "static/media/LoveSomeone_LukasGraham.mp3": "/WebRelax/static/media/LoveSomeone_LukasGraham.98c232ccecb8f3342928.mp3",
     "static/media/Older_SashaSloan.mp3": "/WebRelax/static/media/Older_SashaSloan.6a5f9ba2d17125ca8c0e.mp3",
-    "static/media/DSC03248.JPG": "/WebRelax/static/media/DSC03248.3bf8e9e47587ca5e2a8e.JPG",
+    "static/media/em_00.JPG": "/WebRelax/static/media/em_00.3bf8e9e47587ca5e2a8e.JPG",
     "static/media/em_02.jpg": "/WebRelax/static/media/em_02.663c25664f2ee0cb6de0.jpg",
-    "static/media/em_03.jpg": "/WebRelax/static/media/em_03.647b311e7026dcf97711.jpg",
+    "static/media/em_01.jpg": "/WebRelax/static/media/em_01.b7c84ed24751ebc2b466.jpg",
     "index.html": "/WebRelax/index.html",
-    "main.b26b45b1.css.map": "/WebRelax/static/css/main.b26b45b1.css.map",
+    "main.6b4515f4.css.map": "/WebRelax/static/css/main.6b4515f4.css.map",
     "main.9bd94c62.js.map": "/WebRelax/static/js/main.9bd94c62.js.map"
   },
   "entrypoints": [
-    "static/css/main.b26b45b1.css",
+    "static/css/main.6b4515f4.css",
     "static/js/main.9bd94c62.js"
   ]
 }
